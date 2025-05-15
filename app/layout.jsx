@@ -1,4 +1,3 @@
-"use client"
 import './globals.css'
 import { Inter, Roboto_Mono } from 'next/font/google'
 import Analytics from './components/Analytics'
@@ -10,17 +9,14 @@ import { SessionProvider } from 'next-auth/react'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const robotoMono = Roboto_Mono({ subsets: ['latin'], variable: '--font-roboto-mono' })
 
-export const metadata = {
-  title: 'AI Educational Game Platform',
-  description: 'Interactive learning environment powered by AI',
-  icons: {
-    icon: '/my-favicon-32x32.png',
-  },
-}
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="dark" className={`${inter.variable} ${robotoMono.variable}`}>
+      <head>
+        <title>AI Educational Game Platform</title>
+        <meta name="description" content="Interactive learning environment powered by AI" />
+        <link rel="icon" href="/my-favicon-32x32.png" />
+      </head>
       <body className="min-h-screen bg-gradient-to-br from-base-100 to-base-200">
         <SessionProvider>
           <ThemeProvider>
